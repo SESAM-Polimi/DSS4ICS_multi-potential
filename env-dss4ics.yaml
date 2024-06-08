@@ -1,0 +1,17 @@
+
+name: env-dss4ics
+
+channels:
+  - defaults
+  - conda-forge
+  
+dependencies:
+  - python=3.9
+  - spyder
+  - jupyter
+  - pandas
+  - numpy
+  - plotly
+  - pip
+  - openpyxl
+
