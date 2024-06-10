@@ -64,22 +64,29 @@ def create_radar_chart(categories, data_dict, title, max_scale):
         polar=dict(
             radialaxis=dict(
                 visible=True,
-                range=[0, max_scale]  # Ensure the same scale for all countries
+                range=[0, max_scale],  
+                tickfont=dict(size=14, color='black')  #
+            ),
+            angularaxis=dict(
+                tickfont=dict(size=14, color='black') 
             )
         ),
         showlegend=True,
-        title=title
+        title=dict(
+            text=title,
+            font=dict(size=24, color='black')  
+        ),
+        legend=dict(
+            font=dict(size=14, color='black')  
+        )
     )
 
-    # Create the "Results-comparison" folder if it doesn't exist
     results_folder = "Results-comparison"
     if not os.path.exists(results_folder):
         os.makedirs(results_folder)
 
-    # Save plot as an HTML file in the "Results-comparison" folder
     plot_file = os.path.join(results_folder, f"{title.replace(' ', '_')}_radar_chart.html")
     fig.write_html(plot_file)
     print(f"Plot saved as {plot_file}")
 
-    # Show plot
     fig.show()
