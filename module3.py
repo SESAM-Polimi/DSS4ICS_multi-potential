@@ -46,12 +46,14 @@ def ahp(pairwise_matrix):
     cr = calculate_consistency_ratio(ci, pairwise_matrix.shape[0])
     return priority_vector, ci, cr
 
+# Visualization
+
 def create_radar_chart(categories, data_dict, title, max_scale):
     fig = go.Figure()
 
     for country, values in data_dict.items():
-        values_wrapped = values + values[:1]  # Closing the radar chart loop
-        categories_wrapped = categories + categories[:1]  # Closing the radar chart loop
+        values_wrapped = values + values[:1]
+        categories_wrapped = categories + categories[:1]
         
         fig.add_trace(go.Scatterpolar(
             r=values_wrapped,
@@ -64,20 +66,25 @@ def create_radar_chart(categories, data_dict, title, max_scale):
         polar=dict(
             radialaxis=dict(
                 visible=True,
-                range=[0, max_scale],  
-                tickfont=dict(size=14, color='black')  #
+                range=[0, max_scale],
+                tickfont=dict(size=18, color='black')
             ),
             angularaxis=dict(
-                tickfont=dict(size=14, color='black') 
+                tickfont=dict(size=18, color='black')
             )
         ),
         showlegend=True,
+        legend=dict(
+            font=dict(size=18, color='black'),
+            orientation="h",
+            yanchor="top",
+            y=-0.3,
+            xanchor="center",
+            x=0.5
+        ),
         title=dict(
             text=title,
-            font=dict(size=24, color='black')  
-        ),
-        legend=dict(
-            font=dict(size=14, color='black')  
+            font=dict(size=18, color='black')
         )
     )
 
