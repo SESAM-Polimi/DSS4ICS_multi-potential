@@ -10,11 +10,11 @@ Moreover, the DSS4ICS allows the user to assign specific weights to the differen
 
 # Quick installation
 To use DSS4ICS make sure to have installed anaconda and to follow these steps:
-- install the environment using $$ conda env create -f env-dss4ics.yaml
-- activate the installed environment using $$ conda env activate env-dss4ics
-- open DSS4ICS.py and run it in spyder
-- follow the indications that appear on the console
-- to inspect the default inputs, including the updated fNRB database, you can access the default-data.xlsx file
-- to visualize the results, you can navigate them in the results-comparison folder
+- install the environment using $$ conda env create -f env-dss4ics.yaml  ;
+- activate the installed environment using $$ conda env activate env-dss4ics  ;
+- open DSS4ICS.py and run it in spyder;
+- follow the indications that appear on the console;
+- to inspect the default inputs, including the updated fNRB database, you can access the default-data.xlsx file;
+- to visualize the results, you can navigate them in the results-comparison folder.
 
 The tool remains free to access and improve under the associated license.
